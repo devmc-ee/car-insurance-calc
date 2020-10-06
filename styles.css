@@ -1,0 +1,10 @@
+.tasks-menu{
+    display: flex;
+}
+.tasks-menu__item{
+    list-style: none;
+    padding: 10px;
+}
+.task-wrapper{
+    padding: 20px;
+}
