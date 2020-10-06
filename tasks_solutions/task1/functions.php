@@ -40,7 +40,7 @@ function convertTextToBinary(string $input_text) {
  *
  * @param string $input_text
  *
- * @return string
+ * @return void
  */
 function printStringChars(string $input_text): void {
 	$chars = str_split(trim($input_text));
