@@ -15,7 +15,7 @@
  *
  * @return string
  */
-function convertTextToBinary(string $input_text) {
+function convertTextToBinary(string $input_text):string {
 	$byteLength = 8;
 	$convertFromBase = 16;
 	$convertToBase = 2;
