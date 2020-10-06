@@ -16,8 +16,10 @@
         <label for="carValue">Estimated value of the car (100 - 100 000 EUR):</label>
         <input id="carValue" name="carValue" type="number" min="100" max="100000" placeholder="100 - 100 000 EUR"
                value="">
+
         <label for="taxPercentage">Tax percentage (0 - 100%):</label>
         <input id="taxPercentage" name="taxPercentage" type="number" min="0" max="100" placeholder="0 - 100%" value="">
+
         <label for="instalmentsNumber"> Number of instalments (count of payments in which client wants to pay for the
             policy (1 – 12))</label>
         <select name="instalmentsNumber" id="instalmentsNumber">
@@ -27,8 +29,8 @@
 					<?php echo $i; ?>
                 </option>
 			<?php endfor; ?>
-
         </select>
+
         <button type="submit">CALCULATE</button>
     </form>
 

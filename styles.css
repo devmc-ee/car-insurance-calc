@@ -8,3 +8,14 @@
 .task-wrapper{
     padding: 20px;
 }
+.calculator-form{
+    display: flex;
+    flex-direction: column;
+}
+.calculator-form input,
+.calculator-form select,
+.calculator-form button{
+    padding: 10px;
+    margin: 15px 5px;
+    max-width: 600px;
+}
