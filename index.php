@@ -1,5 +1,6 @@
 <?php
 $request = $_SERVER['REQUEST_URI'];
+require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 ?><!doctype html>
 <html lang="en">
 <head>
