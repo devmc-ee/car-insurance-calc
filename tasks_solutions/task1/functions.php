@@ -1,7 +1,15 @@
 <?php
-
 /**
  * Task 1: printing name with a php loop
+ *
+ */
+
+/**
+ * Convert text to binary
+ *
+ * -split string to chars,
+ * -convert each char to hex ->binary
+ * -add leading zero to the left to get a byte length of the binary code
  *
  * @param string $input_text
  *
