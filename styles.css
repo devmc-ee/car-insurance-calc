@@ -19,3 +19,7 @@
     margin: 15px 5px;
     max-width: 600px;
 }
+.task-form__wrapper{
+    max-width: 600px;
+    margin: 0 auto
+}
