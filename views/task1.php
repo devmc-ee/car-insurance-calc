@@ -4,21 +4,32 @@
     print out your name with one of php loops
 </div>
 <hr>
-<p class="task-intro">My name is:</p>
+<h3 class="task-intro">My name is:</h3>
 <div class="task-result">
-    <span>
-    <?php
-    $name = 'Aleksei';
+    <p>
+		<?php
 
-    echo 'text: ';
-	printStringChars($name);
-    echo '<br/>';
-	/**
-	 *
-	 */
-	echo 'binary: '. convertTextToBinary($name);
-	?>
-    </span>
+		$name = 'Aleksei';
+
+		echo 'text: ';
+
+		/**
+		 *
+		 * @see tasks_solutions/task1/functions.php
+		 */
+		printStringChars($name);
+		?>
+    </p>
+    <p>
+		<?php
+
+		/**
+		 * @see tasks_solutions/task1/functions.php
+		 */
+		echo 'binary: ' . convertTextToBinary($name);
+		?>
+    </p>
+
 
 </div>
 <hr>

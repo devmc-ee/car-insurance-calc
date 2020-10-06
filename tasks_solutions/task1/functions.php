@@ -8,13 +8,11 @@
  * @return string
  */
 function convertTextToBinary(string $input_text) {
-	$split_length = 1;
 	$byteLength = 8;
 	$convertFromBase = 16;
 	$convertToBase = 2;
 
 	$result = '';
-	$charBinary = '';
 
 	$chars = str_split(trim($input_text));
 
@@ -39,14 +37,18 @@ function convertTextToBinary(string $input_text) {
 
 /**
  * Print chars of splited input string
+ *
  * @param string $input_text
  *
  * @return string
  */
-function printStringChars(string $input_text):void {
+function printStringChars(string $input_text): void {
 	$chars = str_split(trim($input_text));
+	$charsLength = count($chars);
+	$i = 0;
 
-	foreach ($chars as $char) {
-		echo $char . ' ';
+	while ($i < $charsLength) {
+		echo $chars[$i] . ' ';
+		$i++;
 	}
 }
