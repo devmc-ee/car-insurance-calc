@@ -2,9 +2,16 @@
 
     const minCarValue = 100;
     const maxCarValue = 100000;
+
     const carValueHelp = document.querySelector('#carValueHelp');
     const carValueInput = document.getElementById('carValue');
+
     const submitBtn = document.querySelector('#calculator-btn-submit');
+
+    const taxPercentageInput = document.querySelector('#taxPercentage');
+    const taxPercentageLabelValue= document.getElementsByClassName('taxPercentage__selected-value')[0];
+
+    const userDateTime = document.querySelector('#userDateTime');
 
     const alerts = {
         'minCarValue': 'Value must be at least 100€.',
@@ -41,9 +48,17 @@
 
         });
 
-// show selected value from slider on every slider move
-    document.getElementById('taxPercentage').addEventListener('input',
+    // show selected value from slider on every slider move
+    taxPercentageInput.addEventListener('input',
         function (e) {
-            document.getElementsByClassName('taxPercentage__selected-value')[0].innerText = e.target.value + '%';
+            taxPercentageLabelValue.innerText = e.target.value + '%';
         });
+
+    submitBtn.addEventListener('click', function () {
+        const currentDateTime = new Date();
+        //set user local time
+        const userTime = currentDateTime.getHours() + ':' + currentDateTime.getMinutes();
+        const userDate = currentDateTime.getFullYear() + '-' + currentDateTime.getMonth() + '-' + currentDateTime.getDate();
+        userDateTime.value = userDate + ' ' + userTime;
+    });
 })();
