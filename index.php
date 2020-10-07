@@ -1,4 +1,5 @@
 <?php
+session_start();
 $request = $_SERVER['REQUEST_URI'];
 require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 ?><!doctype html>
@@ -9,7 +10,9 @@ require_once __DIR__ . '/tasks_solutions/task1/functions.php';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Insly-Test</title>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <nav>
@@ -35,3 +38,4 @@ require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 </body>
 </html>
 
+<?php session_destroy(); ?>
