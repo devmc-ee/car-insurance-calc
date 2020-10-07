@@ -1,4 +1,4 @@
-<?php
+<?php  declare(strict_types=1);
 session_start();
 $request = $_SERVER['REQUEST_URI'];
 require_once __DIR__ . '/tasks_solutions/task1/functions.php';
