@@ -38,18 +38,23 @@
 					<?php endfor; ?>
                 </select>
             </div>
+
+            <input hidden id="userDateTime" name="userDateTime" value="">
             <button id="calculator-btn-submit" class="btn btn-submit btn-primary" disabled="disabled"
-            type="submit">CALCULATE</button>
+                    type="submit">CALCULATE
+            </button>
         </form>
     </div>
     <hr>
     <div class="calculator-results pt-3">
-		<?php if (empty($_SESSION['calculator-results'])): ?>
-            <div id="" class="alert  alert-warning">No results. Please enter values to
-                calculate
-                and
-                submit it.
+		<?php if (!empty($_SESSION['error'])): ?>
+            <div class="alert  alert-danger">
+				<?php echo $_SESSION['error']; ?>
             </div>
+		<?php elseif (empty($_SESSION['calculator-results'])): ?>
+
+            <div class="alert  alert-warning">No results. Please enter values to calculate and submit it.</div>
+
 		<?php else: ?>
 			<?php echo $_SESSION['calculator-results']; ?>
 		<?php endif; ?>
