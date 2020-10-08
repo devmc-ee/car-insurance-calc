@@ -22,12 +22,9 @@
     carValueInput.addEventListener('input',
         function (e) {
             const carValue = e.target.value;
-            submitBtn.disabled = carValue < minCarValue || carValue > maxCarValue;
-        });
 
-    carValueInput.addEventListener('change',
-        function (e) {
-            const carValue = e.target.value;
+            submitBtn.disabled = carValue < minCarValue || carValue > maxCarValue;
+
             if (carValue < minCarValue || carValue > maxCarValue) {
 
                 //mark invalid input with red border
