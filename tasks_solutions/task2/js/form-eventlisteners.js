@@ -19,14 +19,14 @@
         'invalidValue': 'Only integer values are allowed'
     };
 
-    carValueInput.addEventListener('input',
+    carValueInput.addEventListener(
+        'input',
         function (e) {
             const carValue = e.target.value;
 
             submitBtn.disabled = carValue < minCarValue || carValue > maxCarValue;
 
             if (carValue < minCarValue || carValue > maxCarValue) {
-
                 //mark invalid input with red border
                 if (!this.classList.value.includes('is-invalid')) {
                     this.classList.add('is-invalid');
@@ -38,19 +38,21 @@
                 carValueHelp.textContent = carValue > maxCarValue
                     ? alerts.maxCarValue
                     : alerts.minCarValue;
-
             } else {
                 carValueHelp.classList.add('d-none');
                 this.classList.remove('is-invalid');
             }
 
-        });
+        }
+    );
 
     // show selected value from slider on every slider move
-    taxPercentageInput.addEventListener('input',
+    taxPercentageInput.addEventListener(
+        'input',
         function (e) {
             taxPercentageLabelValue.innerText = e.target.value + '%';
-        });
+        }
+    );
 
     submitBtn.addEventListener('click', function () {
         const currentDateTime = new Date();
