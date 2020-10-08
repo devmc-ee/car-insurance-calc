@@ -7,26 +7,25 @@ if (empty($_POST) || count($_POST) < $inputFieldNumber) {
 	header('Location: /task2');
 	exit();
 }
+
 $request = $_POST;
+
+//simple clean up and casting
 array_walk($request, function (&$value, $key) {
 	if ('userDateTime' === $key) {
 		$value = htmlspecialchars($value);
 	} else {
 		$value = (int)$value;
 	}
-
 });
-var_dump($request);
-
-
 
 require_once __DIR__ . '/inc/Calculator.php';
 
 $calculator = new Calculator(
 	$request['carValue'],
 	$request['taxPercentage'],
-	$request['instalmentsNumber'],
 	$request['userDateTime']);
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+
+$_SESSION['calculator-results'] = serialize($calculator->getAllData());
+unset($calculator);
+header('Location: /task2');

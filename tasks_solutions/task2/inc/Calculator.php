@@ -72,7 +72,6 @@ class Calculator {
 	 * Round value to defined precision
 	 *
 	 * @param     $value
-	 *
 	 * @param int $precision , default 2
 	 *
 	 * @return float
