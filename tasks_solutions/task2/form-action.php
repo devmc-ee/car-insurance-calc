@@ -27,5 +27,6 @@ $calculator = new Calculator(
 	$request['userDateTime']);
 
 $_SESSION['calculator-results'] = serialize($calculator->getAllData());
+$_SESSION['instalmentsNumber'] = $request['instalmentsNumber'];
 unset($calculator);
 header('Location: /task2');
