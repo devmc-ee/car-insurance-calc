@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Task 1: printing name with a php loop
  *
@@ -15,32 +16,31 @@
  *
  * @return string
  */
-function convertTextToBinary(string $input_text):string {
-	$byteLength = 8;
-	$convertFromBase = 16;
-	$convertToBase = 2;
+function convertTextToBinary(string $input_text): string
+{
 
-	$result = '';
+    $byteLength = 8;
+    $convertFromBase = 16;
+    $convertToBase = 2;
+    $result = '';
+    $chars = str_split(trim($input_text));
+    foreach ($chars as $char) {
+        $leadingZeros = '';
+        $charInHex = bin2hex($char);
+        $charBinary = base_convert($charInHex, $convertFromBase, $convertToBase);
+        if (strlen($charBinary) < $byteLength) {
+            $numberOfLeadingZeros = $byteLength - strlen($charBinary);
 
-	$chars = str_split(trim($input_text));
-
-	foreach ($chars as $char) {
-		$leadingZeros = '';
-
-		$charInHex = bin2hex($char);
-		$charBinary = base_convert($charInHex, $convertFromBase, $convertToBase);
-
-		if (strlen($charBinary) < $byteLength) {
-
-			$numberOfLeadingZeros = $byteLength - strlen($charBinary);
-
-			for ($i = 0; $i < $numberOfLeadingZeros; $i++) {
-				$leadingZeros .= 0;
-			}
-		}
-		$result .= $leadingZeros . $charBinary . ' ';
-	}
-	return $result;
+            for (
+                $i = 0; $i < $numberOfLeadingZeros;
+                $i++
+            ) {
+                $leadingZeros .= 0;
+            }
+        }
+        $result .= $leadingZeros . $charBinary . ' ';
+    }
+    return $result;
 }
 
 /**
@@ -50,13 +50,14 @@ function convertTextToBinary(string $input_text):string {
  *
  * @return void
  */
-function printStringChars(string $input_text): void {
-	$chars = str_split(trim($input_text));
-	$charsLength = count($chars);
-	$i = 0;
+function printStringChars(string $input_text): void
+{
 
-	while ($i < $charsLength) {
-		echo $chars[$i] . ' ';
-		$i++;
-	}
+    $chars = str_split(trim($input_text));
+    $charsLength = count($chars);
+    $i = 0;
+    while ($i < $charsLength) {
+        echo $chars[$i] . ' ';
+        $i++;
+    }
 }
