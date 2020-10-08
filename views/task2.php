@@ -1,5 +1,5 @@
 <h1>Task 2: Calculator</h1>
-<div class="task__text">
+<div class="task__text bd-callout bd-callout-warning">
     Write a simple car insurance calculator which will output price of the policy using vanilla PHP and JavaScript:
 </div>
 <hr>
