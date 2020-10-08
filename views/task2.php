@@ -21,7 +21,7 @@
             <div class="form-group">
                 <label class="taxPercentage-label" for="taxPercentage">
                     Tax percentage (0 - 100%):
-                    <span class="taxPercentage__selected-value"></span>
+                    <span class="taxPercentage__selected-value">0%</span>
                 </label>
                 <input id="taxPercentage" name="taxPercentage" type="range" min="0" max="100" placeholder="0 - 100%"
                        value="0" class="form-control-range">
@@ -31,7 +31,11 @@
                     for the policy (1 – 12))</label>
                 <select name="instalmentsNumber" id="instalmentsNumber" class="form-control">
 
-					<?php for ($i = 1; $i <= 12; $i++) : ?>
+					<?php
+
+                    use task_solutions\task2\inc\CalculatorResultsView;
+
+					for ($i = 1; $i <= 12; $i++) : ?>
                         <option value="<?php echo $i; ?>">
 							<?php echo $i; ?>
                         </option>
@@ -53,7 +57,7 @@
             </div>
 		<?php elseif (empty($_SESSION['calculator-results'])): ?>
 
-            <div class="alert  alert-warning">No results. Please enter values to calculate and submit it.</div>
+            <div class="alert  alert-warning">Please enter at least car value to calculate the insurance.</div>
 
 		<?php else: ?>
 			<?php echo $_SESSION['calculator-results']; ?>
