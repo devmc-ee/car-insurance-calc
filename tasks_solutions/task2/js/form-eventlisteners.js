@@ -9,27 +9,31 @@
     const submitBtn = document.querySelector('#calculator-btn-submit');
 
     const taxPercentageInput = document.querySelector('#taxPercentage');
-    const taxPercentageLabelValue= document.getElementsByClassName('taxPercentage__selected-value')[0];
+    const taxPercentageLabelValue = document.getElementsByClassName('taxPercentage__selected-value')[0];
 
     const userDateTime = document.querySelector('#userDateTime');
 
     const alerts = {
         'minCarValue': 'Value must be at least 100€.',
         'maxCarValue': 'Maximum value is 100 000€',
+        'invalidValue': 'Only integer values are allowed'
     };
+
+    carValueInput.addEventListener('input',
+        function (e) {
+            const carValue = e.target.value;
+            submitBtn.disabled = carValue < minCarValue || carValue > maxCarValue;
+        });
 
     carValueInput.addEventListener('change',
         function (e) {
             const carValue = e.target.value;
-
             if (carValue < minCarValue || carValue > maxCarValue) {
 
                 //mark invalid input with red border
                 if (!this.classList.value.includes('is-invalid')) {
                     this.classList.add('is-invalid');
                 }
-                submitBtn.disabled = true;
-
                 //show helper text
                 carValueHelp.classList.remove('d-none');
 
@@ -40,10 +44,7 @@
 
             } else {
                 carValueHelp.classList.add('d-none');
-
                 this.classList.remove('is-invalid');
-
-                submitBtn.disabled = false;
             }
 
         });
@@ -58,7 +59,7 @@
         const currentDateTime = new Date();
         //set user local time
         const userTime = currentDateTime.getHours() + ':' + currentDateTime.getMinutes();
-        const userDate = currentDateTime.getFullYear() + '-' + currentDateTime.getMonth() + '-' + currentDateTime.getDate();
+        const userDate = currentDateTime.getFullYear() + '-' + (currentDateTime.getMonth() + 1) + '-' + currentDateTime.getDate();
         userDateTime.value = userDate + ' ' + userTime;
     });
 })();
