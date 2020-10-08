@@ -1,6 +1,9 @@
 <?php  declare(strict_types=1);
 session_start();
+define('ROOT_DIR', __DIR__);
+
 $request = $_SERVER['REQUEST_URI'];
+
 require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 ?><!doctype html>
 <html lang="en">
@@ -16,7 +19,7 @@ require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 </head>
 <body>
 <nav>
-    <ul class="tasks-menu">
+    <ul class="nav tasks-menu">
         <li class="tasks-menu__item"><a href="task1">Task 1</a></li>
         <li class="tasks-menu__item"><a href="task2">Task 2</a></li>
         <li class="tasks-menu__item"><a href="Task3">Task 3</a></li>
