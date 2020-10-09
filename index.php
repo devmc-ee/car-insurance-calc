@@ -4,6 +4,9 @@ define('ROOT_DIR', __DIR__);
 
 $request = $_SERVER['REQUEST_URI'];
 
+// define the uri path to index.php if it is not after the domain name; default is /
+define('ROOT_PATH_URI','/');
+
 require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 ?><!doctype html>
 <html lang="en">
@@ -20,20 +23,20 @@ require_once __DIR__ . '/tasks_solutions/task1/functions.php';
 <body>
 <nav>
     <ul class="nav tasks-menu">
-        <li class="tasks-menu__item"><a href="task1">Task 1</a></li>
-        <li class="tasks-menu__item"><a href="task2">Task 2</a></li>
-        <li class="tasks-menu__item"><a href="Task3">Task 3</a></li>
+        <li class="tasks-menu__item"><a href="<?=ROOT_PATH_URI?>?task=1">Task 1</a></li>
+        <li class="tasks-menu__item"><a href="<?=ROOT_PATH_URI?>?task=2">Task 2</a></li>
+        <li class="tasks-menu__item"><a href="<?=ROOT_PATH_URI?>?task=3">Task 3</a></li>
     </ul>
 </nav>
+
 <div class="task-container">
     <div class="task-wrapper">
 		<?php
-
-		if ('/' === $request) {
+		if (ROOT_PATH_URI === $request) {
 			echo 'Please select the task';
 		} else {
 			//simple routing
-			include 'views/' . $request . '.php';
+			include ROOT_DIR.'/views/task' . $_GET['task'] . '.php';
 		}
 		?>
     </div>
