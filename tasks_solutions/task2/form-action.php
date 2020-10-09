@@ -30,4 +30,8 @@ $calculator = new Calculator($request['carValue'], $request['taxPercentage'], $r
 $_SESSION['calculator-results'] = serialize($calculator->getAllData());
 $_SESSION['instalmentsNumber'] = $request['instalmentsNumber'];
 unset($calculator);
-header('Location: /task2');
+
+$home_uri = json_decode(
+				file_get_contents( '../../package.json' ), true )['home_uri'];
+
+header("Location: $home_uri?task=2");

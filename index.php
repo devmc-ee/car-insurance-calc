@@ -4,8 +4,12 @@ define('ROOT_DIR', __DIR__);
 
 $request = $_SERVER['REQUEST_URI'];
 
-// define the uri path to index.php if it is not after the domain name; default is /
-define('ROOT_PATH_URI','/');
+// define the uri path to index.php if it is not after the domain name; default is
+
+$home_uri = json_decode(
+					  file_get_contents( 'package.json' ), true )['home_uri'];
+
+define('HOME_URI',$home_uri);
 
 
 ?><!doctype html>
@@ -23,16 +27,16 @@ define('ROOT_PATH_URI','/');
 <body>
 <nav>
     <ul class="nav tasks-menu">
-        <li class="tasks-menu__item"><a href="<?=ROOT_PATH_URI?>?task=1">Task 1</a></li>
-        <li class="tasks-menu__item"><a href="<?=ROOT_PATH_URI?>?task=2">Task 2</a></li>
-        <li class="tasks-menu__item"><a href="<?=ROOT_PATH_URI?>?task=3">Task 3</a></li>
+        <li class="tasks-menu__item"><a href="<?=HOME_URI?>?task=1">Task 1</a></li>
+        <li class="tasks-menu__item"><a href="<?=HOME_URI?>?task=2">Task 2</a></li>
+        <li class="tasks-menu__item"><a href="<?=HOME_URI?>?task=3">Task 3</a></li>
     </ul>
 </nav>
 
 <div class="task-container">
     <div class="task-wrapper">
 		<?php
-		if (ROOT_PATH_URI === $request) {
+		if (HOME_URI === $request) {
 			echo 'Please select the task';
 		} else {
 			//simple routing
