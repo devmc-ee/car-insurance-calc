@@ -11,8 +11,9 @@ Task solutions are in the task_solution folder.
 
 ## Installation
 1. extract archive in a working server directory (with php and mysql on run)
+
 2. If the home uri (the location of the entry point, index.php) is not in the domain root place, 
-then specify the home uri in the package.json
+then specify the home uri in the package.json (for example, '/test/insly-test/')
 3. To see the 3 task in action, import dump sql file (tasks_solutions/task3/sql/task3.sql). It will create
 default database named 'task3'. In order to escape creation of the db, then comment 'CREATE DATABASE...' row in the
  dump file
