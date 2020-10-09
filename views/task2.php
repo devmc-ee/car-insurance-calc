@@ -60,7 +60,17 @@
             <div class="alert  alert-warning">Please enter at least car value to calculate the insurance.</div>
 
 		<?php else: ?>
-			<?php echo $_SESSION['calculator-results']; ?>
+
+			<?php
+                require_once ROOT_DIR. '/tasks_solutions/task2/inc/CalculatorResultsView.php';
+
+			    $calculatorData = unserialize($_SESSION['calculator-results'], ['allowed_classes' => false]);
+			    $instalmentsNumber = $_SESSION['instalmentsNumber'];
+
+			    new CalculatorResultsView($calculatorData, (int)$instalmentsNumber);
+
+			?>
+
 		<?php endif; ?>
     </div>
 </div>
