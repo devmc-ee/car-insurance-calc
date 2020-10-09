@@ -14,10 +14,10 @@ Task solutions are in the task_solution folder.
 
 2. If the home uri (the location of the entry point, index.php) is not in the domain root place, 
 then specify the home uri in the package.json (for example, '/test/insly-test/')
-3. To see the 3 task in action, import dump sql file (tasks_solutions/task3/sql/task3.sql). It will create
-default database named 'task3'. In order to escape creation of the db, then comment 'CREATE DATABASE...' row in the
- dump file
-4. The add new database name into connection file, if it different from the default one.
+3. To see the 3 task in action, import dump sql file (tasks_solutions/task3/sql/task3.sql). 
+
+4. The add new database name and other credentials into connection.php (tasks_solutions/task3/connection.php), 
+if it different from the default one.
 
 ## Solutions explained
 ### task 1.
