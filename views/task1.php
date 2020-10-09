@@ -7,7 +7,7 @@
 <div class="task-result">
     <p>
 		<?php
-
+		require_once ROOT_DIR . '/tasks_solutions/task1/functions.php';
 		$name = 'Aleksei';
 
 		echo 'text: ';

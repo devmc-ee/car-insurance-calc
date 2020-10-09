@@ -7,7 +7,7 @@ $request = $_SERVER['REQUEST_URI'];
 // define the uri path to index.php if it is not after the domain name; default is /
 define('ROOT_PATH_URI','/');
 
-require_once __DIR__ . '/tasks_solutions/task1/functions.php';
+
 ?><!doctype html>
 <html lang="en">
 <head>

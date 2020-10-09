@@ -74,6 +74,6 @@
 		<?php endif; ?>
     </div>
 </div>
-<script src="../tasks_solutions/task2/js/form-eventlisteners.js">
+<script src="<?= ROOT_PATH_URI ?>tasks_solutions/task2/js/form-eventlisteners.js">
 
 </script>
