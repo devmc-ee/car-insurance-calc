@@ -1,0 +1,16 @@
+{
+  "name": "devmcee/insurcance-calc",
+  "authors": [
+    {
+      "name": "Aleks Devmcee",
+      "email": "info@devmc.ee"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "CarInsurance\\": "app/",
+      "CarInsurance\\inc\\": "app/inc/"
+    }
+  }
+}
