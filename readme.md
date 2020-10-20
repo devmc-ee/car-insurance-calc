@@ -25,7 +25,6 @@ Install composer dependencies (autoloader)
 
 ````bash
 $ composer install
-$ composer dump-autoload
 ````
 
 If composer is not install globally, then use: 
