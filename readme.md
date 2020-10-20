@@ -1,4 +1,4 @@
-##Simple calculator of car insurance 
+## Simple calculator of car insurance 
 
 Built with php using OOP techniques and Vanilla js. 
 
