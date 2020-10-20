@@ -2,6 +2,8 @@
 
 Built with php using OOP techniques and Vanilla js. 
 
+
+
 Calculator uses the following rules:
 
     * Base price of policy is 11% from entered car value,
@@ -13,6 +15,8 @@ Calculator uses the following rules:
         * • Installment sums must match total policy sum- pay attention to cases where sum does not divide equally
         * • Output is rounded to two decimal places
         
+Homepage: http://milicity.eu/test/insly-test/
+
 ### Install
 
 clone repository:
