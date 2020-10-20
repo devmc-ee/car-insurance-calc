@@ -16,7 +16,10 @@
 <div class="task-container">
     <h1 class="text-center">Car Insurance Calc (simple)</h1>
     <hr>
+
     <div class="container-fluid">
+        <p class="text-center"><a href="https://github.com/devmc-ee/insly-test">Github repository</a></p>
+
         <pre>
         * Base price of policy is 11% from entered car value,
         * - except every Friday 15-20 o’clock (user time) when it is 13%
@@ -27,7 +30,7 @@
         * • Installment sums must match total policy sum- pay attention to cases where sum does not divide equally
         * • Output is rounded to two decimal places
             </pre>
-        <a href="https://github.com/devmc-ee/insly-test">Github repository</a>
+
     </div>
     <div class="task-result">
         <div class="task-form__wrapper">
