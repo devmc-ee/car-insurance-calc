@@ -1,6 +1,6 @@
 <?php
 
-namespace task_solutions\task2\inc;
+namespace CarInsurance\inc;
 
 /**
  * Class Calculator
@@ -14,7 +14,6 @@ namespace task_solutions\task2\inc;
  * • Installment sums must match total policy sum- pay attention to cases where sum does not divide equally
  * • Output is rounded to two decimal places
  */
-
 class Calculator
 {
     private $basePriceRate;
@@ -28,9 +27,9 @@ class Calculator
     /**
      * Calculator constructor.
      *
-     * @param int    $carValue
-     * @param int    $taxPercentage
-     * @param string $userDateTime
+     * @param  int  $carValue
+     * @param  int  $taxPercentage
+     * @param  string  $userDateTime
      */
     public function __construct(
         int $carValue,
@@ -75,18 +74,18 @@ class Calculator
         return $this->basePriceRate;
     }
 
-
     /**
      * Round value to defined precision
      *
      * @param     $value
-     * @param int $precision , default 2
+     * @param  int  $precision  , default 2
      *
      * @return float
      */
     private function roundValue($value, int $precision = 2): float
     {
         $mode = PHP_ROUND_HALF_EVEN;
+
         return (round($value, $precision, $mode));
     }
 
@@ -98,6 +97,7 @@ class Calculator
     public function getBasePriceValue(): float
     {
         $basePriceValue = ($this->carValue * $this->basePriceRate / 100);
+
         return $this->roundValue($basePriceValue);
     }
 
@@ -120,6 +120,7 @@ class Calculator
     {
         $basePriceValue = $this->getBasePriceValue();
         $commissionValue = ((100 + $this->commissionRate) / 100 - 1) * $basePriceValue;
+
         return $this->roundValue($commissionValue);
     }
 
@@ -140,6 +141,7 @@ class Calculator
     {
         $taxRate = $this->taxPercentage;
         $basePrice = $this->getBasePriceValue();
+
         return $this->roundValue($basePrice * ((100 + $taxRate) / 100 - 1));
     }
 
@@ -151,6 +153,7 @@ class Calculator
         $basePrice = $this->getBasePriceValue();
         $commission = $this->getCommissionValue();
         $taxes = $this->getTaxValue();
+
         return $this->roundValue($basePrice + $commission + $taxes);
     }
 
@@ -172,14 +175,14 @@ class Calculator
     public function getAllData(): array
     {
         return [
-            'basePriceValue'  => $this->getBasePriceValue(),
-            'basePriceRate'   => $this->getBasePriceRate(),
+            'basePriceValue' => $this->getBasePriceValue(),
+            'basePriceRate' => $this->getBasePriceRate(),
             'commissionValue' => $this->getCommissionValue(),
-            'taxValue'        => $this->getTaxValue(),
-            'totalValue'      => $this->getTotalValue(),
-            'taxRate'         => $this->getTaxRate(),
-            'commissionRate'  => $this->getCommissionRate(),
-            'carValue'        => $this->getCarValue()
+            'taxValue' => $this->getTaxValue(),
+            'totalValue' => $this->getTotalValue(),
+            'taxRate' => $this->getTaxRate(),
+            'commissionRate' => $this->getCommissionRate(),
+            'carValue' => $this->getCarValue(),
         ];
     }
 }

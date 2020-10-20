@@ -1,6 +1,6 @@
 <?php
 
-namespace task_solutions\task2\inc;
+namespace CarInsurance\inc;
 
 /**
  * Class CalculatorResultsView
@@ -29,22 +29,29 @@ class CalculatorResultsView
         $this->calculatorData = $calculatorData;
         $this->instalmentsNumber = $instalmentsNumber;
 
-        $this->getTable($this->getTableRows());
+
     }
 
     /**
      * Table
-     * @param $rows
+     * @return string
      */
-    private function getTable(string $rows): void
+    public function getTable(): string
     {
+        $rows = $this->getTableRows();
+        ob_start();
+
         ?>
-        <table class="table table-responsive table-hover">
+        <table class="table - - table-responsive table-hover">
             <tbody>
-            <?php echo $rows; ?>
+          <?php echo $rows  ?>
             </tbody>
         </table>
         <?php
+
+        $result = ob_get_contents();
+        ob_clean();
+        return $result;
     }
 
     /**

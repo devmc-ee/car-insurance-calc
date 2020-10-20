@@ -1,33 +1,35 @@
-# Insly test tasks
-This project is a solution of test tasks from insly
+##Simple calculator of car insurance 
 
-Solved by Aleksei Milišenko
+Built with php using OOP techniques and Vanilla js. 
 
-There are 3 tasks.
+Calculator uses the following rules:
 
-There is a simple routing that allows to navigate and use templates from View folder, to display task solutions
+    * Base price of policy is 11% from entered car value,
+        * - except every Friday 15-20 o’clock (user time) when it is 13%
+        * • Commission is added to base price (17%)
+        * • Tax is added to base price (user entered)
+        *
+        * • Calculate different payments separately (if number of payments are larger than 1)
+        * • Installment sums must match total policy sum- pay attention to cases where sum does not divide equally
+        * • Output is rounded to two decimal places
+        
+### Install
 
-Task solutions are in the task_solution folder.
+clone repository:
 
-## Installation
-1. extract archive in a working server directory (with php and mysql on run)
+````
+git clone https://github.com/devmc-ee/insly-test.git
+````
 
-2. If the home uri (the location of the entry point, index.php) is not in the domain root place, 
-then specify the home uri in the package.json (for example, '/test/insly-test/')
-3. To see the 3 task in action, import dump sql file (tasks_solutions/task3/sql/task3.sql). 
+Install composer dependencies (autoloader)
 
-4. The add new database name and other credentials into connection.php (tasks_solutions/task3/connection.php), 
-if it different from the default one.
+````bash
+$ composer install
+$ composer dump-autoload
+````
 
-## Solutions explained
-### task 1.
-Prints the name in a text and in a binary
+If composer is not install globally, then use: 
+````
+$ php composer.phar [command]
 
-### task 2.
-Calculator: add car value that is valid, then select other options. After submitting a result table appear under the
- calc.
- 
- ### task 3. 
- SHows built sql query for getting all information about employee in all languages with a single row
- 
- If database is connected, then below can see fetch result
+````

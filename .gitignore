@@ -3,3 +3,6 @@
 !.htaccess
 gulpfile.babel.js
 *.lock
+*.pdf
+/docs
+/vendor/
