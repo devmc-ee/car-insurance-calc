@@ -88,7 +88,7 @@ define('HOME_URI', $home_uri);
 
         </div>
     </div>
-    <script src="<?= HOME_URI ?>app/js/form-eventlisteners.js">
+    <script src="app/js/form-eventlisteners.js">
     </script>
 </div>
 </body>
