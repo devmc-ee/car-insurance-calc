@@ -33,3 +33,12 @@ If composer is not install globally, then use:
 $ php composer.phar [command]
 
 ````
+
+Define home root directory in package.json:
+
+````
+
+{...
+"home_uri": "/home",
+...}
+````

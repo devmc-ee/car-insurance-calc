@@ -35,6 +35,7 @@ define('HOME_URI', $home_uri);
         * • Installment sums must match total policy sum- pay attention to cases where sum does not divide equally
         * • Output is rounded to two decimal places
             </pre>
+        <a href="https://github.com/devmc-ee/insly-test">Github repository</a>
     </div>
     <div class="task-result">
         <div class="task-form__wrapper">
