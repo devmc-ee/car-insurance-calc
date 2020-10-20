@@ -1,12 +1,4 @@
-<?php  declare(strict_types=1);
-
-// define the uri path to index.php if it is not after the domain name; default is
-$home_uri = json_decode(file_get_contents('package.json'), true)['home_uri'];
-
-define('HOME_URI', $home_uri);
-
-
-?><!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -88,8 +80,14 @@ define('HOME_URI', $home_uri);
 
         </div>
     </div>
+    <script>
+        window.carInsuranceCal = {
+            ajaxurl: "//<?php echo $_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']); ?>/app/form-action.php"
+        }
+    </script>
     <script src="app/js/form-eventlisteners.js">
     </script>
+
 </div>
 </body>
 </html>

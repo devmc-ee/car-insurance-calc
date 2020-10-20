@@ -77,7 +77,7 @@
         userDateTime.value = userDate + ' ' + userTime;
 
         xhr.onreadystatechange = processResponse;
-        xhr.open('POST', '../app/form-action.php', true);
+        xhr.open('POST', window.carInsuranceCal.ajaxurl, true);
         xhr.send(formData);
     }
 
