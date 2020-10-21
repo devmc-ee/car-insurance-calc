@@ -1,5 +1,5 @@
 {
-  "name": "devmcee/insurcance-calc",
+  "name": "devmcee/car-insurance-calc",
   "authors": [
     {
       "name": "Aleks Devmcee",
@@ -9,8 +9,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "CarInsurance\\": "app/",
-      "CarInsurance\\inc\\": "app/inc/"
+      "CarInsurance\\": "app/"
     }
   }
 }
