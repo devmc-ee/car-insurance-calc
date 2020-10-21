@@ -15,14 +15,14 @@ Calculator uses the following rules:
         * • Installment sums must match total policy sum- pay attention to cases where sum does not divide equally
         * • Output is rounded to two decimal places
         
-Homepage: http://milicity.eu/test/insly-test/
+
 
 ### Install
 
 clone repository:
 
 ````
-git clone https://github.com/devmc-ee/insly-test.git
+git clone https://github.com/devmc-ee/car-insurance-calc.git
 ````
 
 Install composer dependencies (autoloader)
