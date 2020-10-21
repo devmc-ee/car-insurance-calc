@@ -33,4 +33,5 @@ $resultViewBuilder = new CalculatorResultsView($calculator->getAllData(),(int) $
 echo json_encode(['html'=>$resultViewBuilder->getTable()]);
 
 unset($calculator);
+unset($resultViewBuilder);
 die();
