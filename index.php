@@ -18,7 +18,7 @@
     <hr>
 
     <div class="container-fluid">
-        <p class="text-center"><a href="https://github.com/devmc-ee/insly-test">Github repository</a></p>
+        <p class="text-center"><a href="https://github.com/devmc-ee/car-insurance-calc.git">Github repository</a></p>
 
         <pre>
         * Base price of policy is 11% from entered car value,
